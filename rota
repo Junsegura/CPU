@@ -1,0 +1,26 @@
+.DATA
+msg "Escriba su nombre(7):",0
+
+.UDATA
+nombre 8
+
+.CODE
+    .STARTUP
+    mov A,msg
+    mov B,nombre
+    PS A
+    GS B,7
+    mov A,[B]
+    met A
+    sum B,1
+    mov A,[B]
+    met A
+    res B,1
+    tom A
+    mov [B],A
+    sum B,1
+    tom A
+    mov [B],A
+    mov A,nombre
+    PS A
+    .EXIT

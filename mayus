@@ -1,0 +1,21 @@
+.DATA
+msg "Escriba su nombre en minusculas:",0
+msgq "Su nombre en mayusculas es :",0
+
+.UDATA
+nombre 8
+
+.CODE
+    .STARTUP
+    mov A,msg
+    mov B,nombre
+    PS A
+    GS B,7
+    mov C,7
+vuelta:
+    mov A,[B]
+    res A,32
+    PC A
+    sum B,1
+    buc vuelta
+    .EXIT
